@@ -7,32 +7,44 @@
   font-family: "Poppins", sans-serif;
 
   /*color mode */
-  --primary-color: #130a92;
-  --secondary-color: #0d71e4;
-  --dark-color: #1e0330;
-  --light-color: #ffffff;
+  --primary-color: #b0c4de;
+  --secondary-color: #dda0dd;
+  --dark-color: #eb6c8d;
+  --light-color: #f8f8ff;
 
   /* fonts */
   --title-font-size: 2rem;
-  --subtitle-font-size: 1rem;
-  --text-color: rgb(3, 3, 3);
-  --body-font: rgb(59, 59, 59);
+  --subtitle-font-size: 1.5rem;
+  --font-size: 1.2rem;
+  --button-font-size: 1rem;
+  --text-color: #1c1c1c;
+  --body-font: #1c1c1c;
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
+  background-color: var(--primary-color);
 }
 
 .divider {
   margin: 10px 0px 10px 0px;
-  height: 1px;
-  background: rgb(2, 0, 36);
+  height: 1.5px;
+  background: rgb(102, 185, 223);
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 0%,
+    rgba(102, 185, 223, 1) 0%,
+    rgb(3, 159, 231) 0%,
     rgba(0, 212, 255, 0) 100%
   );
+}
+
+h2 {
+  font-size: var(--subtitle-font-size);
+}
+
+p {
+  font-size: var(--font-size);
+  color: var(--text-color);
 }
 
 header {
@@ -46,12 +58,11 @@ header .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  font-size: var(--font-size);
 }
 
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -59,20 +70,43 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 25px;
 }
 
 nav ul li a {
-  color: var(--dark-color);
+  color: var(--body-font);
   text-decoration: none;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  transition: color 0.2s;
+  position: relative;
 }
 
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--dark-color);
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--dark-color);
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Aqui começa o CSS do banner*/
 .banner {
   height: 400px;
   width: 100%;
@@ -97,7 +131,7 @@ nav ul li a {
 
 .banner h1 {
   width: 80%;
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
   font-style: normal;
   font-weight: 700;
   font-size: 1.8rem;
@@ -121,8 +155,10 @@ nav ul li a {
   display: flex;
   padding: 25px 0px 0px 20px;
   font-size: var(--title-font-size);
+  color: var(--body-font);
 }
 
+/* Aqui começa o CSS dos cards*/
 .container__cards {
   width: 100%;
   height: auto;
@@ -144,7 +180,7 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--light-color);
   position: relative;
   gap: 5px;
   border-radius: 10px;
@@ -153,7 +189,7 @@ nav ul li a {
 
 .icon__card {
   position: absolute;
-  top: 150px;
+  top: 130px;
 }
 
 .icon__card img {
@@ -175,7 +211,7 @@ nav ul li a {
 }
 
 .background-feiratrans {
-  background-image: url("../img/Fundo_Marcha.png");
+  background-image: url("../img/fundo_trans.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px 10px 0px 0px;
@@ -195,4 +231,84 @@ nav ul li a {
 .card_title {
   text-align: center;
   margin-bottom: 24px;
+}
+
+.button__card {
+  background-color: var(--secondary-color);
+  padding: 1rem 2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 7px;
+  color: var(--text-color);
+  font-size: var(--button-font-size);
+  text-decoration: none;
+}
+
+.button__card:hover {
+  background-color: #eb6c8d;
+  color: var(--light-color);
+}
+
+/* Aqui começa o CSS do vídeo*/
+#video {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.title__video {
+  text-align: center;
+}
+
+.video__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.video {
+  flex-grow: 3;
+}
+
+.video__descricao {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 30%;
+}
+
+.video__descricao h2 {
+  margin-bottom: 1rem;
+}
+
+/* Aqui começa o CSS do footer*/
+footer {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.redes__sociais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.redes__sociais a {
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.redes__sociais a:hover {
+  transform: translateY(-8px);
+}
+
+.rodape__text {
+  color: #f1f1f1;
+  font-size: 1.5rem;
 }
