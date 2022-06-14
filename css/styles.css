@@ -465,6 +465,8 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 0 -10px;
+    padding: 10px 0px 20px 0;
   }
 
   .form__email {
