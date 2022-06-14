@@ -465,7 +465,10 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 0 -10px;
+  }
+
+  .form__email {
+    width: 100%;
   }
 
   .rodape__text {
