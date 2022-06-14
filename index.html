@@ -23,16 +23,16 @@
 
   <body>
     <!-- Aqui inicia o cabeçalho -->
-    <header>
+    <header id="topo">
       <div class="menu">
         <div class="menu__img">
-          <img src="img/logo_guia_sp.png" alt="Logo" />
+          <img src="img/logo_ladoB.png" alt="Logo" />
         </div>
 
         <nav class="menu__list">
           <ul>
             <li class="list">
-              <a href="">
+              <a href="#">
                 <span>Home</span>
               </a>
             </li>
@@ -150,7 +150,7 @@
         </div>
       </section>
 
-      <div class="divider"></div>
+      <!-- <div class="divider"></div> -->
 
       <!-- Aqui inicia o de vídeo -->
       <section id="video">
@@ -192,11 +192,16 @@
       <section>
         <div class="form">
           <div class="form__news">
-            <p>Se inscreva para mais info...</p>
+            <img src="img/enviar_e-mail.png" />
+            <p>Receba nossa <i>newsletter</i>.</p>
           </div>
           <div class="form__email">
             <form action="email" method="post">
-              <input type="email" name="email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="digite seu e-mail"
+              />
               <button type="submit">Enviar</button>
             </form>
           </div>
@@ -217,5 +222,8 @@
 
     <p class="rodape__text">©2022 Daniela Coltri</p>
     <p class="rodape__text">Todos os direitos reservados.</p>
+    <div class="icon__seta">
+      <a href="#topo"> <img src="img/seta_paracima.png" /></a>
+    </div>
   </footer>
 </html>

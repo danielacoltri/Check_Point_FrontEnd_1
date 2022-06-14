@@ -11,14 +11,19 @@
   --secondary-color: #dda0dd;
   --dark-color: #eb6c8d;
   --light-color: #f8f8ff;
+  --more-dark-color: #1c1c1c;
 
   /* fonts */
-  --title-font-size: 2rem;
-  --subtitle-font-size: 1.5rem;
-  --font-size: 1.2rem;
-  --button-font-size: 1rem;
+  --title-font-size: 1, 1rem;
+  --subtitle-font-size: 0.9rem;
+  --font-size: 0.7rem;
+  --button-font-size: 0.6rem;
   --text-color: #1c1c1c;
   --body-font: #1c1c1c;
+}
+
+main {
+  margin: 0 55px;
 }
 
 html {
@@ -27,7 +32,7 @@ html {
 }
 
 .divider {
-  margin: 10px 0px 10px 0px;
+  margin: 10px -55px 10px -55px;
   height: 1.5px;
   background: rgb(102, 185, 223);
   background: linear-gradient(
@@ -59,6 +64,10 @@ header .menu {
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size);
+}
+
+.menu__img img {
+  width: 30%;
 }
 
 nav {
@@ -113,7 +122,8 @@ nav ul li a.active::after {
 /* Aqui começa o CSS do banner*/
 .banner {
   height: 600px;
-  width: 100%;
+  width: auto;
+  margin: 0 -55px;
 
   background-image: url("../img/banner.png");
   background-repeat: no-repeat;
@@ -158,7 +168,7 @@ nav ul li a.active::after {
 
 .title {
   display: flex;
-  padding: 25px 0px 0px 20px;
+  padding-top: 30px;
   font-size: var(--title-font-size);
   color: var(--body-font);
 }
@@ -167,7 +177,6 @@ nav ul li a.active::after {
 .container__cards {
   width: 100%;
   height: auto;
-  padding: 1%;
   margin-top: 25px;
   display: flex;
   flex-direction: row;
@@ -199,7 +208,7 @@ nav ul li a.active::after {
 
 .icon__card img {
   border-radius: 50%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.6);
 }
 
 .card__img-background {
@@ -240,16 +249,17 @@ nav ul li a.active::after {
 
 .button__card {
   background-color: var(--secondary-color);
-  padding: 1rem 2rem;
-  margin-bottom: 1.2rem;
+  padding: 16px 30px;
+  margin-bottom: 46px;
   border-radius: 7px;
   color: var(--text-color);
   font-size: var(--button-font-size);
+  font-weight: 500;
   text-decoration: none;
 }
 
 .button__card:hover {
-  background-color: #eb6c8d;
+  background-color: var(--dark-color);
   color: var(--light-color);
 }
 
@@ -272,12 +282,11 @@ nav ul li a.active::after {
 }
 
 .video__descricao {
-  margin: 20px 150px;
   font-size: var(--subtitle-font-size);
 }
 
 .video__descricao h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
 }
 
 .video__descricao a {
@@ -286,26 +295,73 @@ nav ul li a.active::after {
 }
 
 .video__descricao a:hover {
-  background-color: #eb6c8d;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-color);
+  margin: 45px -55px 0px -55px;
+  padding: 16px 55px;
+}
+
+.form__news {
+  display: flex;
+  font-size: 0.6rem;
+  align-items: center;
+}
+
+.form__news p {
+  color: var(--light-color);
+  padding: 0 0 0 10px;
+}
+
+.form__email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  border-radius: 8px;
+  padding: 7px;
+  border: 0;
+}
+
+.form__email button {
+  font-size: var(--button-font-size);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 0;
+}
+
+.form__email button:hover {
+  background-color: var(--more-dark-color);
   color: var(--light-color);
 }
 
 /* Aqui começa o CSS do footer*/
 footer {
   width: 100%;
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: var(--secondary-color);
+  padding: 30px;
+  background-color: var(--more-dark-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .redes__sociais {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 10px;
 }
 
 .redes__sociais a {
@@ -314,22 +370,46 @@ footer {
   transition: 0.3s;
 }
 
+.redes__sociais img {
+  width: 60%;
+}
+
 .redes__sociais a:hover {
   transform: translateY(-8px);
 }
 
 .rodape__text {
-  color: #f1f1f1;
+  color: var(--light-color);
   font-size: var(--font-size);
 }
 
+.icon__seta a img:hover {
+  transform: translateY(-8px);
+}
+
+.icon__seta {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+}
+
+.icon__seta img {
+  width: 60%;
+  transition: 0.3s;
+}
+
 @media screen and (max-width: 769px) {
+  main {
+    margin: 0;
+    padding: 0 10px;
+  }
+
   html {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .menu__img img {
-    width: 80%;
+    width: 40%;
   }
 
   .menu__list {
@@ -338,6 +418,26 @@ footer {
 
   .menu__hamburguer {
     display: flex;
+  }
+
+  .banner,
+  .divider {
+    margin: -10px;
+  }
+
+  .banner div,
+  .banner h1,
+  .banner h2 {
+    width: 95%;
+    gap: 50px;
+  }
+
+  h1 {
+    font-size: var(--title-font-size);
+  }
+
+  h2 {
+    font-size: var(--subtitle-font-size);
   }
 
   .title {
@@ -355,20 +455,17 @@ footer {
     width: 95%;
   }
 
-  /* .video__container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .video iframe {
-    width: 100%;
-    height: 100px;
-  } */
-
   .video__descricao {
     width: 100%;
     padding: 1rem;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -10px;
   }
 
   .rodape__text {
